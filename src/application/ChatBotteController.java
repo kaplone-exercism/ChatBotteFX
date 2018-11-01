@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Cellule;
 import util.CelluleToPane;
+import util.UrlReader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -54,6 +55,12 @@ public class ChatBotteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        try {
+            UrlReader.readURL("dialogue", 4);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         user = "Réponse";
 

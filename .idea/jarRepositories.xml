@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="ec5c4aae-6720-4bd8-bc74-2d2d2a63ef45" />
+      <option name="name" value="ec5c4aae-6720-4bd8-bc74-2d2d2a63ef45" />
+      <option name="url" value="http://repo1.maven.org/maven2/" />
+    </remote-repository>
+  </component>
+</project>
