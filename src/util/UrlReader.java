@@ -3,6 +3,7 @@ package util;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
+import model.Vocabulaire;
 import model.WebResult;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class UrlReader {
 
-    public static String readURL(String motif, Integer tailleMin) throws IOException {
+    public static Vocabulaire readURL(String motif, Integer tailleMin, Integer presence) throws IOException {
 
 
         //String url = "https://fr.wikipedia.org/wiki/" + motif;
@@ -32,10 +33,12 @@ public class UrlReader {
         }
 
         WebResult webResult = new WebResult(Arrays.stream(lignes).collect(Collectors.joining("\n")));
-        System.out.println(webResult.getString());
-        System.out.println("----------------");
-        Statistiques.countWords(motif, webResult.getString(), tailleMin).entrySet().forEach(c -> System.out.println(c));
+        //System.out.println(webResult.getString());
+        //System.out.println("----------------");
+        String phrases = Statistiques.countWords(motif, webResult.getString(), tailleMin, presence).entrySet().stream()
+                .map(a -> a.getKey() + " : " + a.getValue().stream().collect(Collectors.joining(", ")))
+                .collect(Collectors.joining("\n"));
         //System.out.println(new WebResult(content.split("<span>"+ motif.toUpperCase() + ".*</span>")[1].split("<b>PRONONC. ET ORTH.")[0]).getString());
-        return content;
+        return new Vocabulaire(webResult.getString(), phrases);
     }
 }

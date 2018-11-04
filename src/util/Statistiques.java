@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Statistiques {
 
-    public static Map<Integer, List<String>> countWords(String motif, String s, Integer tailleMin){
+    public static Map<Integer, List<String>> countWords(String motif, String s, Integer tailleMin, Integer presence){
 
         Map<String, Integer> result = new TreeMap<>();
         Arrays.stream(s.replaceAll("\n", " ").split(" "))
@@ -24,7 +24,7 @@ public class Statistiques {
         Map<Integer, List<String>> result_ = new TreeMap<>();
         result.entrySet().stream()
                 .filter(a->a.getKey().length() > tailleMin )
-                .filter(a->a.getValue() > 1 )
+                .filter(a->a.getValue() > presence )
                 .map(a -> {
                     if (motif.equals(a.getKey())
                             || motif.equals(a.getKey().substring(1))

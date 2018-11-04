@@ -33,6 +33,11 @@
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Tests">
+                    <items>
+                      <MenuItem fx:id="testVocabulaire" mnemonicParsing="false" text="Test vocabulaire" />
+                    </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </children>

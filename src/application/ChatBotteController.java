@@ -43,7 +43,12 @@ public class ChatBotteController implements Initializable {
     @FXML
     public MenuItem newSession;
 
+    @FXML
+    public MenuItem testVocabulaire;
+
     private String user;
+    private NewSessionController newSessionController;
+    private TestVocabulaireController testVocabulaireController;
 
     public void setUser(String user) {
         this.user = user;
@@ -57,7 +62,7 @@ public class ChatBotteController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         try {
-            UrlReader.readURL("dialogue", 4);
+            UrlReader.readURL("dialogue", 4, 1);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,8 +95,32 @@ public class ChatBotteController implements Initializable {
                 stage.initStyle(StageStyle.DECORATED);
                 stage.setTitle("Nouvelle session");
                 stage.setScene(new Scene(root));
-                NewSessionController.setStage(stage);
-                NewSessionController.setController(this);
+                if (newSessionController == null){
+                    newSessionController = new NewSessionController();
+                    newSessionController.setStage(stage);
+                    newSessionController.setController(this);
+                }
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        } );
+
+        testVocabulaire.onActionProperty().setValue(a -> {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("testVocabulaire.fxml"));
+                Stage stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.initStyle(StageStyle.DECORATED);
+                stage.setTitle("Test de recherche de vocabulaire");
+                stage.setScene(new Scene(root));
+                if (testVocabulaire == null){
+                    testVocabulaireController = new TestVocabulaireController();
+                    testVocabulaireController.setStage(stage);
+                    testVocabulaireController.setController(this);
+                }
                 stage.show();
 
             } catch (IOException e) {

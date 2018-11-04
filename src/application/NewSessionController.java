@@ -16,10 +16,10 @@ import java.util.ResourceBundle;
 
 import static model.Type.QUESTION;
 
-public class NewSessionController implements Initializable {
+public class NewSessionController implements ControllerBase {
 
-    private static Stage stage;
-    private static ChatBotteController controller;
+    private Stage stage;
+    private ChatBotteController controller;
 
     @FXML
     public TextField newNom;
@@ -32,19 +32,19 @@ public class NewSessionController implements Initializable {
     @FXML
     public AnchorPane modalNew;
 
-    public static void setStage(Stage stage) {
-        NewSessionController.stage = stage;
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
-    public static void setController(ChatBotteController controller) {
-        NewSessionController.controller = controller;
+    public void setController(ChatBotteController controller) {
+        this.controller = controller;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         newNom.onKeyPressedProperty().setValue(a -> {
-            if (a.getCode().equals(KeyCode.ENTER)){
+            if (a.getCode().equals(KeyCode.ENTER)) {
                 controller.setUser(newNom.getText());
                 controller.getCellulesPane().clear();
                 controller.getCellulesPane().add(CelluleToPane.convert(new Cellule(QUESTION, "Bonjour " + newNom.getText() + ". On commence ?", null)));

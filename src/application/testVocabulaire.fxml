@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestVocabulaireController">
+   <top>
+      <VBox>
+         <children>
+            <Label text="Mot à rechercher :">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <HBox prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="testField" />
+                  <Button fx:id="testButton" mnemonicParsing="false" text="Rechercher" />
+               </children>
+            </HBox>
+            <VBox>
+               <children>
+                  <Label text="Options">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="81.0" prefWidth="600.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="261.0" spacing="10.0">
+                           <children>
+                              <Label text="Taille de mot minimum :" />
+                              <Slider fx:id="tailleMin" blockIncrement="1.0" majorTickUnit="1.0" max="7.0" min="4.0" minorTickCount="0" prefHeight="38.0" prefWidth="229.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="100.0" prefWidth="258.0" spacing="10.0">
+                           <children>
+                              <Label text="Nombre d'apparitions minimum :" />
+                              <Slider fx:id="nbMin" blockIncrement="1.0" majorTickUnit="1.0" max="6.0" min="1.0" minorTickCount="0" prefHeight="38.0" prefWidth="229.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="3.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox>
+         <children>
+            <Label text="Phrases :" />
+            <TextArea fx:id="areaPhrases" prefHeight="358.0" prefWidth="628.0" BorderPane.alignment="CENTER" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox>
+         <children>
+            <Label text="Mots :" />
+            <TextArea fx:id="areaMots" prefHeight="356.0" prefWidth="260.0" BorderPane.alignment="CENTER" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
