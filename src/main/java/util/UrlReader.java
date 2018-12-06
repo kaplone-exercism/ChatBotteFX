@@ -1,10 +1,10 @@
-package util;
+package main.java.util;
 
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
-import model.Vocabulaire;
-import model.WebResult;
+import main.java.model.Vocabulaire;
+import main.java.model.WebResult;
 
 import java.io.IOException;
 import java.util.Arrays;

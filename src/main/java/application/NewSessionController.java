@@ -1,20 +1,18 @@
-package application;
+package main.java.application;
 
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.Cellule;
-import util.CelluleToPane;
+import main.java.model.Cellule;
+import main.java.util.CelluleToPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static model.Type.QUESTION;
+import static main.java.model.Constantes.Type.QUESTION;
 
 public class NewSessionController implements ControllerBase {
 
@@ -31,6 +29,14 @@ public class NewSessionController implements ControllerBase {
 
     @FXML
     public AnchorPane modalNew;
+
+    public NewSessionController() {
+    }
+
+    public NewSessionController(Stage stage, ChatBotteController controller) {
+        this.stage = stage;
+        this.controller = controller;
+    }
 
     public void setStage(Stage stage) {
         this.stage = stage;

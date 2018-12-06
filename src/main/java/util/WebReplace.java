@@ -1,4 +1,4 @@
-package util;
+package main.java.util;
 
 public enum WebReplace {
     C3A9("%C3%A9", "é"),

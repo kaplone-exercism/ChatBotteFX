@@ -1,16 +1,14 @@
-package util;
+package main.java.util;
 
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.Cellule;
+import main.java.model.Cellule;
 
-import static model.Type.QUESTION;
+import static main.java.model.Constantes.Type.QUESTION;
 
 public class CelluleToPane {
 

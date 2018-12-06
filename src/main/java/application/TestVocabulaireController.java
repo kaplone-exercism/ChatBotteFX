@@ -1,4 +1,4 @@
-package application;
+package main.java.application;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -7,8 +7,8 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Vocabulaire;
-import util.UrlReader;
+import main.java.model.Vocabulaire;
+import main.java.util.UrlReader;
 
 import java.io.IOException;
 import java.net.URL;
