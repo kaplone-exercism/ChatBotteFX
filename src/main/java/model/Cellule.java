@@ -1,14 +1,14 @@
-package main.java.model;
+package model;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import main.java.model.Constantes.Type;
+import model.Constantes.Type;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static main.java.model.Constantes.Type.QUESTION;
+import static model.Constantes.Type.QUESTION;
 
 public class Cellule extends Rectangle{
 

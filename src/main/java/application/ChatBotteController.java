@@ -1,40 +1,34 @@
-package main.java.application;
+package application;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import main.java.DAO.Check;
-import main.java.DAO.Mapper;
-import main.java.DAO.mapper.QuestionMapper;
-import main.java.DAO.Reader;
-import main.java.DAO.mapper.TypeReponseMapper;
-import main.java.model.Cellule;
-import main.java.model.Question;
-import main.java.model.TypeReponse;
-import main.java.util.CelluleToPane;
-import main.java.util.PopUp;
-import main.java.util.SQLiteJDBC;
-import main.java.util.UrlReader;
+import DAO.Check;
+import DAO.Mapper;
+import DAO.mapper.QuestionMapper;
+import DAO.Reader;
+import DAO.mapper.TypeReponseMapper;
+import model.Cellule;
+import model.Question;
+import model.TypeReponse;
+import util.CelluleToPane;
+import util.PopUp;
+import util.SQLiteJDBC;
+import util.UrlReader;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static main.java.model.Constantes.Type.QUESTION;
-import static main.java.model.Constantes.Type.REPONSE;
+import static model.Constantes.Type.QUESTION;
+import static model.Constantes.Type.REPONSE;
 
 public class ChatBotteController implements Initializable {
 

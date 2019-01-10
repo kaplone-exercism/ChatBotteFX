@@ -1,6 +1,4 @@
-package main.java.DAO;
-
-import org.apache.xpath.operations.Bool;
+package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -156,7 +154,7 @@ public class Table {
             Statement stmt = null;
             try {
                 Class.forName("org.sqlite.JDBC");
-                c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+                c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
 
                 stmt = c.createStatement();
                 stmt.executeUpdate(ddl);

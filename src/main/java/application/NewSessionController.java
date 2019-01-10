@@ -1,4 +1,4 @@
-package main.java.application;
+package application;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -6,13 +6,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import main.java.model.Cellule;
-import main.java.util.CelluleToPane;
+import model.Cellule;
+import util.CelluleToPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static main.java.model.Constantes.Type.QUESTION;
+import static model.Constantes.Type.QUESTION;
 
 public class NewSessionController implements ControllerBase {
 

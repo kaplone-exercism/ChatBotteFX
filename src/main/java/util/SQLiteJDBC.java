@@ -1,4 +1,4 @@
-package main.java.util;
+package util;
 
 import java.sql.*;
 
@@ -15,7 +15,7 @@ public class SQLiteJDBC {
         Statement stmt = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
 
@@ -53,7 +53,7 @@ public class SQLiteJDBC {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
             c.setAutoCommit(false);http://google.github.io/lovefield/error_lookup/src/error_lookup.html?c=201&p0=Item.pkItem&p1=100
             System.out.println("Opened database successfully");
 
@@ -77,7 +77,7 @@ public class SQLiteJDBC {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
             c.setAutoCommit(false);
             System.out.println("Opened database successfully");
 

@@ -1,7 +1,7 @@
-package main.java.DAO.mapper;
+package DAO.mapper;
 
-import main.java.DAO.Mapper;
-import main.java.model.Reponse;
+import DAO.Mapper;
+import model.Reponse;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package main.java.DAO;
+package DAO;
 
 import java.sql.*;
 
@@ -16,7 +16,7 @@ public class Check {
         ResultSet resultSet = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
 
             stmt = c.createStatement();
             String sql = String.format("SELECT * FROM sqlite_master WHERE type='table' AND name='%s'", tableToCheck);

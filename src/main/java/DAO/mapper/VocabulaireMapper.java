@@ -1,8 +1,8 @@
-package main.java.DAO.mapper;
+package DAO.mapper;
 
-import main.java.DAO.Mapper;
-import main.java.model.Question;
-import main.java.model.Vocabulaire;
+import DAO.Mapper;
+import model.Question;
+import model.Vocabulaire;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

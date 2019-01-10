@@ -1,4 +1,4 @@
-package main.java.DAO;
+package DAO;
 
 import java.sql.*;
 
@@ -11,7 +11,7 @@ public class Reader {
         T element = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
             c.setAutoCommit(false);
 
             stmt = c.createStatement();

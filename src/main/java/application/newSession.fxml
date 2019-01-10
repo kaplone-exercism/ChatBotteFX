@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="modalNew" prefHeight="138.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.application.NewSessionController">
+<AnchorPane fx:id="modalNew" prefHeight="138.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewSessionController">
    <children>
       <VBox layoutX="6.0" layoutY="7.0" prefHeight="124.0" prefWidth="307.0" spacing="10.0">
          <children>

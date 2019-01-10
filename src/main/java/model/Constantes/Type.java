@@ -1,4 +1,4 @@
-package main.java.model.Constantes;
+package model.Constantes;
 
 public enum Type {
 

@@ -1,6 +1,6 @@
-package main.java.model;
+package model;
 
-import main.java.util.WebReplace;
+import util.WebReplace;
 
 import java.util.Map;
 

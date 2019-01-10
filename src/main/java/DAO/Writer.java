@@ -1,4 +1,4 @@
-package main.java.DAO;
+package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ public class Writer {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:src/db/chatbotte.db");
+            c = DriverManager.getConnection("jdbc:sqlite:db/chatbotte.db");
             c.setAutoCommit(false);
 
             stmt = c.createStatement();

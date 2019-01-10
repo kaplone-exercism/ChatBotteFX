@@ -1,10 +1,10 @@
 package util;
 
-import main.java.DAO.Check;
-import main.java.DAO.Mapper;
-import main.java.DAO.mapper.QuestionMapper;
-import main.java.DAO.Reader;
-import main.java.model.Question;
+import DAO.Check;
+import DAO.Mapper;
+import DAO.mapper.QuestionMapper;
+import DAO.Reader;
+import model.Question;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertFalse;
