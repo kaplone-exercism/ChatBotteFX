@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,19 +8,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestVocabulaireController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestVocabulaireController">
    <top>
-      <VBox>
+      <VBox spacing="2.0">
          <children>
             <Label text="Mot à rechercher :">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <HBox prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="32.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="testField" />
                   <Button fx:id="testButton" mnemonicParsing="false" text="Rechercher" />
                </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </HBox>
             <VBox>
                <children>
@@ -47,13 +51,16 @@
                </children>
             </VBox>
          </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
       </VBox>
    </top>
    <left>
       <VBox>
          <children>
             <Label text="Phrases :" />
-            <TextArea fx:id="areaPhrases" prefHeight="358.0" prefWidth="628.0" BorderPane.alignment="CENTER" />
+            <TextArea fx:id="areaPhrases" prefHeight="469.0" prefWidth="680.0" BorderPane.alignment="CENTER" />
          </children>
       </VBox>
    </left>
@@ -61,8 +68,28 @@
       <VBox>
          <children>
             <Label text="Mots :" />
-            <TextArea fx:id="areaMots" prefHeight="356.0" prefWidth="260.0" BorderPane.alignment="CENTER" />
+            <TabPane prefHeight="502.0" prefWidth="329.0">
+               <tabs>
+                  <Tab text="Mots">
+                     <content>
+                        <TextArea fx:id="areaMots" prefHeight="356.0" prefWidth="329.0" BorderPane.alignment="CENTER" />
+                     </content>
+                  </Tab>
+                  <Tab text="Sélection">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="329.0">
+                           <children>
+                              <VBox fx:id="vbox_des_mots" prefHeight="469.0" prefWidth="325.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
          </children>
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin>
       </VBox>
    </right>
 </BorderPane>
