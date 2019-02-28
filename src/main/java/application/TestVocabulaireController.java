@@ -70,6 +70,7 @@ public class TestVocabulaireController implements ControllerBase {
     }
 
     private void updateVue(){
+        int nbRows;
         vbox_des_mots.getChildren().clear();
         vbox_des_mots.setSpacing(5d);
         try {
@@ -79,36 +80,44 @@ public class TestVocabulaireController implements ControllerBase {
             List<String> lignes_sorted = Arrays.asList(vocabulaire.getMots().split("\\n"));
             lignes_sorted.sort((o1, o2) -> Integer.valueOf(o2.split(" : ")[0]).compareTo(Integer.valueOf(o1.split(" : ")[0])));
             for (String ligne : lignes_sorted){
+                nbRows = 0;
                 //System.out.println("--> " + ligne);
                 VBox vBox = new VBox();
                 vBox.setMinHeight(10d);
                 Label label = new Label(ligne.split(" : ")[0] + " occurences :");
                 ListView<HBox> listView= new ListView<>();
-                listView.setMinHeight(10d);
                 ObservableList<HBox> hBoxes = FXCollections.observableArrayList();
                 listView.setItems(hBoxes);
-                for (String mot : ligne.split(" : ")[1].split(", ")){
-                    HBox hBox = new HBox();
-                    Label labelMot = new Label(mot);
-                    labelMot.setMinWidth(180d);
-                    Toggle imageView = new Toggle("images/toggle_on.png");
-                    imageView.setOnMouseClicked(event -> {
-                        if (imageView.switchValue()){
-                            labelMot.setOpacity(1d);
+                if (ligne.split(" : ").length > 1){
+                    for (String mot : ligne.split(" : ")[1].split(", ")){
+                        nbRows++;
+                        HBox hBox = new HBox();
+                        Label labelMot = new Label(mot);
+                        labelMot.setMinWidth(180d);
+                        Toggle imageView = new Toggle("images/toggle_on.png");
+                        imageView.setOnMouseClicked(event -> {
+                            if (imageView.switchValue()){
+                                labelMot.setOpacity(1d);
 
-                        }
-                        else {
-                            labelMot.setOpacity(0.5d);
-                        }
+                            }
+                            else {
+                                labelMot.setOpacity(0.5d);
+                            }
 
-                    });
-                    hBox.getChildren().addAll(labelMot, imageView);
-                    hBoxes.add(hBox);
+                        });
+                        hBox.getChildren().addAll(labelMot, imageView);
+                        hBoxes.add(hBox);
+                    }
+                    Double idealSize = Math.min(133d, nbRows * 33.3d);
+                    listView.setPrefHeight(idealSize);
+                    listView.setMinHeight(idealSize);
+                    vBox.setPrefHeight(idealSize + 20);
+                    vBox.setMinHeight(idealSize + 20);
+                    vBox.getChildren().addAll(label, listView);
+                    VBox.setVgrow(listView, Priority.NEVER);
+                    vbox_des_mots.getChildren().add(vBox);
+                    VBox.setVgrow(vBox, Priority.NEVER);
                 }
-                vBox.getChildren().addAll(label, listView);
-                VBox.setVgrow(listView, Priority.NEVER);
-                vbox_des_mots.getChildren().add(vBox);
-                VBox.setVgrow(vBox, Priority.NEVER);
             }
         } catch (IOException e) {
             e.printStackTrace();
